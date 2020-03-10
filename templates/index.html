@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Flask + Tweepy Sample Application</title>
+  <title>AtCoder Friend Finder</title>
 </head>
 <body>
-  <h1>Flask + Tweepy Sample Application</h1>
-  {% if timeline == False %}
-    <p><a href="{{ url_for('twitter_auth') }}">連携アプリ認証</a></p>
+  <h1>AtCoder Friend Finder</h1>
+  {% if authorized == False %}
+    <p><a href="{{ url_for('twitter_auth') }}">Sign in with Twitter</a></p>
   {% else %}
     <!-- 取得した timeline のテキストを表示 -->
-    {% for status in timeline %}
-      <p>{{ status.text }}</p>
-      <hr>
-    {% endfor %}
+    <ul>{% for user in users %}
+      <li>
+        <span><a href="https://atcoder.jp/users/{{ user.atcoder_id }}">{{ user.atcoder_id }}</a></span>
+        <span><a href="https://twitter.com/{{ user.twitter_id }}">{{ user.twitter_name }} @{{ user.twitter_id }}</a></span>
+      </li>
+    {% endfor %}</ul>
+    [Tweet]
   {% endif %}
-  <footer>
-    Dec/03/2018 AM 09:26<p />
-  </footer>
 </body>
 </html>
