@@ -6,11 +6,28 @@
 <body>
   <h1>AtCoder Friend Finder</h1>
   {% if authorized == False %}
+    <input type="hidden" class="authorized" value="false">
     <p><a href="{{ url_for('twitter_auth') }}">Sign in with Twitter</a></p>
   {% else %}
-    <!-- 取得した timeline のテキストを表示 -->
-    <ul></ul>
+    <input type="hidden" class="authorized" value="true">
+    <button class="find_button">フレンドを探す</button>
+    <table class="friends_table">
+      <thead>
+        <td>AtCoder ID</td>
+        <td>Twitter</td>
+      </thead>
+      <tbody class="friends_table_body">
+      </tbody>
+    </table>
     [Tweet]
   {% endif %}
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+  <script>
+    const URL_FOR_FIND_FRIENDS = "{{ url_for('find_friends') }}"
+  </script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
