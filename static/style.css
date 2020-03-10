@@ -1,0 +1,20 @@
+
+@keyframes loading{
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: solid 2px;
+    border-color: #888 transparent;
+    border-radius: 50%;
+    animation: loading .8s ease infinite;
+}

@@ -19,8 +19,13 @@ function renderFriendUsers(users) {
 
 $(function(){
     $(".find_button").on("click", e => {
+        $(".friends_table_body").html("");
+        $(".friends_table_body").addClass("loading");
+
         searchFriendUsers().then(data => {
             renderFriendUsers(data.data);
+        }).always(() => {
+            $(".friends_table_body").removeClass("loading");
         });
     });
 });
