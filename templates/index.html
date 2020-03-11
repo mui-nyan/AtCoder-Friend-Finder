@@ -20,7 +20,8 @@
       <tbody class="friends_table_body">
       </tbody>
     </table>
-    [Tweet]
+    <div class="tweet_button_wrapper">
+    </div>
   {% endif %}
   <script
     src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -30,5 +31,21 @@
     const URL_FOR_FIND_FRIENDS = "{{ url_for('find_friends') }}"
   </script>
   <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <script>window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+
+    return t;
+  }(document, "script", "twitter-wjs"));</script>
 </body>
 </html>

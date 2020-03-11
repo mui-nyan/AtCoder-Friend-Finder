@@ -17,6 +17,11 @@ function renderFriendUsers(users) {
     ` ).join(""));
 }
 
+function tweetButton(num) {
+    $(".tweet_button_wrapper").html(`<a href="https://twitter.com/intent/tweet" class="twitter-share-button" data-text="私はAtCoderユーザのTwitterを${num}人フォローしています。" data-url="https://atcoder-friend-finder.herokuapp.com/" data-lang="ja">Tweet</a>`);
+    twttr.widgets.load();
+}
+
 $(function(){
     $(".find_button").on("click", e => {
         $(".friends_table_body").html("");
@@ -24,6 +29,7 @@ $(function(){
 
         searchFriendUsers().then(data => {
             renderFriendUsers(data.data);
+            tweetButton(data.size);
         }).always(() => {
             $(".friends_table_body").removeClass("loading");
         });
