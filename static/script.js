@@ -24,6 +24,7 @@ function tweetButton(num) {
 
 $(function(){
     $(".find_button").on("click", e => {
+        $(".find_button").prop("disabled", true);
         $(".friends_table_body").html("");
         $(".friends_table_body").addClass("loading");
 
@@ -32,6 +33,7 @@ $(function(){
             tweetButton(data.size);
         }).always(() => {
             $(".friends_table_body").removeClass("loading");
+            $(".find_button").prop("disabled", false);
         });
     });
 });
