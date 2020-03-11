@@ -6,10 +6,21 @@
 </head>
 <body>
   <h1>AtCoder Friend Finder</h1>
+  <h2>説明</h2>
+  <p>TwitterでフォローしているAtCoderユーザを表示します。</p>
   {% if authorized == False %}
     <input type="hidden" class="authorized" value="false">
+    <p>はじめにTwitterにログインしてください。</p>
     <p><a href="{{ url_for('twitter_auth') }}">Sign in with Twitter</a></p>
-  {% else %}
+  {% endif %}
+  <h2>制限事項</h2>
+  <ul>
+    <li>AtCoderのプロフィールに書いてあるTwitterIDを無条件に信頼します。</li>
+    <li>フォロー数が多すぎる場合、取得しきれないかもしれません。</li>
+    <li>取得できない場合、API使用回数制限の可能性があります。15分くらい待ってから試してください。</li>
+  </ul>
+  {% if authorized %}
+    <h2>フレンドを探す</h2>
     <input type="hidden" class="authorized" value="true">
     <button class="find_button">フレンドを探す</button>
     <table class="friends_table">
