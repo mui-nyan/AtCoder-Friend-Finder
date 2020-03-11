@@ -1,7 +1,5 @@
 from flask import request, render_template, session,redirect
-from services.twitter import get_friend_users, verify, authorized
-from services.matching import matching
-from repositories.atcoder_user import load_atcoder_users
+from services.twitter import verify, authorized
 
 def get():
 
