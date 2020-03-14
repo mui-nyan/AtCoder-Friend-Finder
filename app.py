@@ -36,3 +36,8 @@ def find_friends():
 @app.route('/twitter_auth', methods=['GET'])
 def twitter_auth():
     return twitter_auth_redirect.get()
+
+@app.route('/logout', methods=['GET'])
+def logout():
+    session.clear()
+    return redirect(url_for('index'))
