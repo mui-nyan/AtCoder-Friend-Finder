@@ -21,8 +21,10 @@
     <li>取得できない場合、API使用回数制限の可能性があります。15分くらい待ってから試してください。</li>
   </ul>
   {% if authorized %}
-    <h2>フレンドを探す</h2>
     <input type="hidden" class="authorized" value="true">
+    <h2>フレンドを探す</h2>
+    <p>@{{ screen_name }} さんとしてログイン中</p>
+    <p>下のボタンでフレンド検索を実行します。</p>
     <button class="find_button">フレンドを探す</button>
     <table class="friends_table">
       <thead>

@@ -52,6 +52,19 @@ def get_api():
     auth.set_access_token(session["access_token"], session["access_token_secret"])
     return tweepy.API(auth)
 
+def i_am():
+    if "i_am" in session:
+        return session["i_am"]
+
+    api = get_api()
+
+    if not api:
+        return False
+
+    account_settings = api.get_settings()
+    session["i_am"] = account_settings["screen_name"]
+    return account_settings["screen_name"]
+
 def get_user_timeline():
     """ user の timeline のリストを取得 """
 
