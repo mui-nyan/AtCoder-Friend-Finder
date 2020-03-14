@@ -11,8 +11,8 @@ function searchFriendUsers() {
 function renderFriendUsers(users) {
     $(".friends_table_body").html(users.map( (user) => `
       <tr>
-        <td><a href="https://atcoder.jp/users/${ user.atcoder_id }">${ user.atcoder_id }</a></td>
-        <td><a href="https://twitter.com/${ user.twitter_id }">${ user.twitter_name } @${ user.twitter_id }</a></td>
+        <td><a target=”_blank” href="https://atcoder.jp/users/${ user.atcoder_id }">${ user.atcoder_id }</a></td>
+        <td><a target=”_blank” href="https://twitter.com/${ user.twitter_id }">${ user.twitter_name } @${ user.twitter_id }</a></td>
       </tr>
     ` ).join(""));
 }
