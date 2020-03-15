@@ -71,6 +71,8 @@
 
 .rank_black  .atcoder_name { color: black; }
 .rank_black  .rating       { color: black; }
+.rank_gray  .atcoder_name { color: #666; }
+.rank_gray  .rating       { color: #666; }
 .rank_brown  .atcoder_name { color: brown; }
 .rank_brown  .rating       { color: brown; }
 .rank_green  .atcoder_name { color: green; }
