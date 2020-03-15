@@ -1,4 +1,8 @@
 
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
 @keyframes loading{
     0% {
         transform: rotate(0deg);
@@ -18,3 +22,66 @@
     border-radius: 50%;
     animation: loading .8s ease infinite;
 }
+
+.friends_list{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    list-style: none;
+}
+
+.friends_list a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.friends_list a:hover{
+    text-decoration-line: underline;
+}
+
+.friend_item{
+    width: 200px;
+    margin: 4px;
+    padding: 2px;
+    background-color: #fff;
+    border: solid 1px #888;
+}
+
+.atcoder_name{
+    font-weight: bold;
+}
+
+.user_icon_area{
+    position: relative;
+    width: auto;
+}
+
+.user_icon {
+    width: 100%;
+}
+
+.rating{
+    position: absolute;
+    right:0;
+    bottom:0;
+    background-color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.rank_black  .atcoder_name { color: black; }
+.rank_black  .rating       { color: black; }
+.rank_brown  .atcoder_name { color: brown; }
+.rank_brown  .rating       { color: brown; }
+.rank_green  .atcoder_name { color: green; }
+.rank_green  .rating       { color: green; }
+.rank_cyan   .atcoder_name { color: rgb(115, 185, 255); }
+.rank_cyan   .rating       { color: rgb(115, 185, 255); }
+.rank_blue   .atcoder_name { color: blue; }
+.rank_blue   .rating       { color: blue; }
+.rank_yellow .atcoder_name { color: yellow; text-shadow: 0 1px 1px black}
+.rank_yellow .rating       { color: yellow; text-shadow: 0 1px 1px black}
+.rank_orange .atcoder_name { color: orange; }
+.rank_orange .rating       { color: orange; }
+.rank_red    .atcoder_name { color: red; }
+.rank_red    .rating       { color: red; }

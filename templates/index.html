@@ -27,14 +27,7 @@
     <p>@{{ screen_name }} さんとしてログイン中 <a href="{{ url_for('logout') }}">ログアウト</a></p>
     <p>下のボタンでフレンド検索を実行します。</p>
     <button class="find_button">フレンドを探す</button>
-    <table class="friends_table">
-      <thead>
-        <td>AtCoder ID</td>
-        <td>Twitter</td>
-      </thead>
-      <tbody class="friends_table_body">
-      </tbody>
-    </table>
+    <ul class="friends_list"></ul>
     <div class="tweet_button_wrapper">
     </div>
   {% endif %}
