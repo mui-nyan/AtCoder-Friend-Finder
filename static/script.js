@@ -13,6 +13,8 @@ function renderFriendUsers(users) {
       <tr>
         <td><a target=”_blank” href="https://atcoder.jp/users/${ user.atcoder_id }">${ user.atcoder_id }</a></td>
         <td><a target=”_blank” href="https://twitter.com/${ user.twitter_id }">${ user.twitter_name } @${ user.twitter_id }</a></td>
+        <td>${ user.rating }</td>
+        <td><img src="${ user.profile_img }"></td>
       </tr>
     ` ).join(""));
 }

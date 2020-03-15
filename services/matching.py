@@ -11,8 +11,10 @@ def matching(twitter_users, atcoder_users):
 
         ret.append({
                 "atcoder_id": atcoder_user["atcoder_id"],
+                "rating": atcoder_user["rating"],
+                "profile_img": atcoder_user["profile_img"],
                 "twitter_id": twitter_user["id"],
-                "twitter_name": twitter_user["name"],
+                "twitter_name": twitter_user["name"]
             })
 
     return ret

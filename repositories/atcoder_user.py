@@ -18,7 +18,9 @@ def load_twitter_id_atcoder_user_dict():
                 continue
             users[tmp[1]] = {
                 "atcoder_id": tmp[0],
-                "twitter_id": tmp[1]
+                "twitter_id": tmp[1],
+                "rating": int(tmp[2]),
+                "profile_img": tmp[3],
             }
     
     cache = users
