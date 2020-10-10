@@ -27,8 +27,9 @@
     <h2>フレンドを探す</h2>
     <p>@{{ screen_name }} さんとしてログイン中 <a href="{{ url_for('logout') }}">ログアウト</a></p>
     <p>下のボタンでフレンド検索を実行します。</p>
-    <button class="find_button">フレンドを探す</button>
-    <div class="tweet_button_wrapper">
+    <div class="buttons">
+      <button class="find_button">フレンドを探す</button>
+      <div class="tweet_button_wrapper"></div>
     </div>
     <ul class="friends_list"></ul>
   {% endif %}

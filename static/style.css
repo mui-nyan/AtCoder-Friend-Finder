@@ -23,6 +23,20 @@
     animation: loading .8s ease infinite;
 }
 
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.buttons > * {
+    margin-right: 8px;
+}
+
+.tweet_button_wrapper {
+    height: 20px;
+}
+
 .friends_list{
     display: flex;
     flex-wrap: wrap;
