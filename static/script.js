@@ -45,6 +45,8 @@ $(function(){
         $(".friends_list").addClass("loading");
 
         searchFriendUsers().then(data => {
+            const users = data.data;
+            users.sort((a,b) => b.rating - a.rating);
             renderFriendUsers(data.data);
             tweetButton(data.size);
         }).always(() => {
